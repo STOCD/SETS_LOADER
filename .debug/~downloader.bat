@@ -8,6 +8,7 @@ set filesurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/~en
 set dirsurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/~folders.txt
 bitsadmin.exe /transfer "DownloadFolderList" %dirsurl% "%dirs%"
 bitsadmin.exe /transfer "DownloadFilesList" %filesurl% "%files%"
+bitsadmin.exe /transfer "DownloadRUN" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/RUN.bat "%CD%\RUN.bat"
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
 	if exist !current! (
