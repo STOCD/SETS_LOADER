@@ -31,4 +31,6 @@ for /f %%a in ('type "%files%"') do (
 	set url=%prefix%!url:\=/!
 	bitsadmin.exe /transfer "Downloading..." !url! !targetpath!
 )
+cls
+echo SUCCESS
 pause
