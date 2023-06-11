@@ -1,2 +1,4 @@
-.config\
 local\
+src\
+src\PreApp\
+src\app\

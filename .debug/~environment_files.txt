@@ -1,2 +1,15 @@
-local\version.txt
-setup.py
+main.py
+local\Appicon.icns
+local\arrow-down.png
+local\arrow-up.png
+local\ground_skills.json
+local\hamburger_icon.png
+local\icon.PNG
+local\icon.ico
+local\logo_bar.png
+local\sets_loading.PNG
+local\space_skills.json
+src\__init__.py
+src\PreApp\__init__.py
+src\PreApp\snapshot.py
+src\app\__init__.py
