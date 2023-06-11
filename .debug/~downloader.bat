@@ -2,14 +2,18 @@
 setlocal enabledelayedexpansion
 pushd "%~dp0"
 cd ..
-set files=%CD%\environment_files.txt
+set files=%CD%\.debug\~environment_files.txt
+set dirs=%CD%\.debug\~folders.txt
+set filesurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/~environment_files.txt
+set dirsurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/~folders.txt
+bitsadmin.exe /transfer "DownloadFolderList" %dirsurl% "%dirs%"
+bitsadmin.exe /transfer "DownloadFilesList" %filesurl% "%files%"
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
 	if exist !current! (
 		del !current!
 	)
 )
-set dirs=%CD%\folders.txt
 for /f %%a in ('type "%dirs%"') do (
 	set currentfolder="%CD%\%%a"
 	if exist !currentfolder! (
