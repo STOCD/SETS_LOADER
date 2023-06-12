@@ -8,6 +8,7 @@ set filesurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~e
 set dirsurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~folders.txt
 bitsadmin.exe /transfer "DownloadFolderList" %dirsurl% "%dirs%"
 bitsadmin.exe /transfer "DownloadFilesList" %filesurl% "%files%"
+bitsadmin.exe /transfer "DownloadAppFilesList" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~app_files.txt "%CD%\..debug\~app_files.txt"
 bitsadmin.exe /transfer "DownloadRUN" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/RUN.bat "%CD%\RUN.bat"
 bitsadmin.exe /transfer "Download#SETUP" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/%%23SETUP.bat "%CD%\..debug\#SETUP.bat"
 bitsadmin.exe /transfer "Download#RUN-SNAPSHOT" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/%%23RUN-SNAPSHOT.bat "%CD%\..debug\#RUN-SNAPSHOT.bat"
