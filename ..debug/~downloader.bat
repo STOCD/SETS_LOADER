@@ -13,7 +13,7 @@ bitsadmin.exe /transfer "Download#SETUP" https://raw.githubusercontent.com/STOCD
 bitsadmin.exe /transfer "Download#RUN-SNAPSHOT" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/%%23RUN-SNAPSHOT.bat "%CD%\..debug\#RUN-SNAPSHOT.bat"
 bitsadmin.exe /transfer "Download#RELOAD-REQUIREMENTS" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/%%23RELOAD-REQUIREMENTS.bat "%CD%\..debug\#RELOAD-REQUIREMETNS.bat"
 bitsadmin.exe /transfer "Download#UNINSTALL-REQUIREMENTS" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/%%23UNINSTALL-REQUIREMENTS.bat "%CD%\..debug\#UNINSTALL-REQUIREMENTS.bat"
-bitsadmin.exe /transfer "Download#DOWNLOAD_APP_FILES" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/%%23DOWNLOAD_APP_FILES.bat "%CD%\..debug\#DOWNLOAD_APP_FILES.bat"
+bitsadmin.exe /transfer "Download#DOWNLOAD_APP_FILES" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/%%23DOWNLOAD_APP_FILES.bat "%CD%\#DOWNLOAD_APP_FILES.bat"
 bitsadmin.exe /transfer "DownloadReadme" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/README.md "%CD%\README.txt"
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
