@@ -1,10 +1,11 @@
 # SETS_LOADER
-Collection of batch files used to install SETS and its dependencies and keep them up to date
+Collection of batch files used to install SETS and its dependencies and keep them up to date.
+GitHub Repository: https://github.com/STOCD/SETS_LOADER
 
 # === THIS ONLY WORKS FOR WINDOWS COMPUTERS ===
 
 ## HOW TO USE
-This loader will be available through download from https://stobuilds.com together with a pre-downloaded image folder.
+This loader is available through download from https://stobuilds.com/SETS/downloads.html including a pre-downloaded image folder.
 
 - Make sure to unpack the supplied folder and move it to where you want SETS to be installed.
 - Install python 3, this can be either done through the Mircrosoft store or by downloading the python installer from www.python.org/downloads/windows/. Make sure to install python to PATH.
