@@ -34,4 +34,5 @@ for /f %%a in ('type "%files%"') do (
 )
 cls
 echo SUCCESS
-pause
+echo:
+call .debug\#SETUP.bat
