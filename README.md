@@ -23,4 +23,4 @@ In the debug folder you will find various files for debugging. Internal files st
 - #UNINSTALL_REQUIREMENTS.bat uninstalls requirements
 
 ## HOW SETS_LOADER WORKS
--> see https://github.com/STOCD/SETS_LOADER/main/backend.md
+-> see https://github.com/STOCD/SETS_LOADER/blob/main/backend.md
