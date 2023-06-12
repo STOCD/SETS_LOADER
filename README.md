@@ -10,6 +10,7 @@ This loader is available through download from https://stobuilds.com/SETS/downlo
 - Make sure to unpack the supplied folder and move it to where you want SETS to be installed.
 - Install python 3, this can be either done through the Mircrosoft store or by downloading the python installer from www.python.org/downloads/windows/. Make sure to install python to PATH.
 - Run #DOWNLOAD_ENVIRONMENT.bat to download and install the app.
+- Unpack the images folder, then create a new folder called `.config` and put the images folder inside it.
 - Run RUN.bat to start the app
 
 - Every time you want to get a new version of the app, run #DOWNLOAD_APP.bat.
