@@ -10,6 +10,11 @@ bitsadmin.exe /transfer "DownloadFolderList" %dirsurl% "%dirs%"
 bitsadmin.exe /transfer "DownloadFilesList" %filesurl% "%files%"
 bitsadmin.exe /transfer "DownloadRUN" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/RUN.bat "%CD%\RUN.bat"
 bitsadmin.exe /transfer "Download#SETUP" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/%%23SETUP.bat "%CD%\.debug\#SETUP.bat"
+bitsadmin.exe /transfer "Download#RUN-SNAPSHOT" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/%%23RUN-SNAPSHOT.bat "%CD%\.debug\#RUN-SNAPSHOT.bat"
+bitsadmin.exe /transfer "Download#RELOAD-REQUIREMENTS" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/%%23RELOAD-REQUIREMENTS.bat "%CD%\.debug\#RELOAD-REQUIREMETNS.bat"
+bitsadmin.exe /transfer "Download#UNINSTALL-REQUIREMENTS" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/%%23UNINSTALL-REQUIREMENTS.bat "%CD%\.debug\#UNINSTALL-REQUIREMENTS.bat"
+bitsadmin.exe /transfer "Download#DOWNLOAD_APP_FILES" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/%%23DOWNLOAD_APP_FILES.bat "%CD%\.debug\#DOWNLOAD_APP_FILES.bat"
+bitsadmin.exe /transfer "DownloadReadme" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/README.md "%CD%\README.txt"
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
 	if exist !current! (
@@ -36,5 +41,5 @@ for /f %%a in ('type "%files%"') do (
 cls
 echo SUCCESS DOWNLOADING ENVIRONMENT
 echo:
-echo [%date%]-[%time%] -- Environment successfuly downloaded >> log.txt
+echo [%date%]-[%time] -- Environment files successfully downloaded >> "%CD%\.debug\log.txt
 call .debug\#SETUP.bat
