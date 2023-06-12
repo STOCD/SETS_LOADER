@@ -1,6 +1,6 @@
 @echo off
 pushd "%~dp0"
-python "pip.py"
+python "~pip.py"
 cd..
 set setsdir=%CD%
 pushd %userprofile%
