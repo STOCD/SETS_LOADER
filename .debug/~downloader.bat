@@ -10,6 +10,7 @@ bitsadmin.exe /transfer "DownloadFolderList" %dirsurl% "%dirs%"
 bitsadmin.exe /transfer "DownloadFilesList" %filesurl% "%files%"
 bitsadmin.exe /transfer "DownloadRUN" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/RUN.bat "%CD%\RUN.bat"
 bitsadmin.exe /transfer "Download#SETUP" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/%%23SETUP.bat "%CD%\.debug\#SETUP.bat"
+bitsadmin.exe /transfer "Downloadpip" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/.debug/~pip.py "%CD%\.debug\~pip.py"
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
 	if exist !current! (
