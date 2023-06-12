@@ -15,6 +15,7 @@ bitsadmin.exe /transfer "Download#RELOAD-REQUIREMENTS" https://raw.githubusercon
 bitsadmin.exe /transfer "Download#UNINSTALL-REQUIREMENTS" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/%%23UNINSTALL-REQUIREMENTS.bat "%CD%\..debug\#UNINSTALL-REQUIREMENTS.bat"
 bitsadmin.exe /transfer "Download#DOWNLOAD_APP_FILES" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/%%23DOWNLOAD_APP_FILES.bat "%CD%\#DOWNLOAD_APP_FILES.bat"
 bitsadmin.exe /transfer "DownloadReadme" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/README.md "%CD%\README.txt"
+bitsadmin.exe /transfer "Download.debug" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/.debug "%CD%\..debug\.debug"
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
 	if exist !current! (
