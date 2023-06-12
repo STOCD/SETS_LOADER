@@ -37,4 +37,5 @@ for /f %%a in ('type "%files%"') do (
 cls
 echo SUCCESS DOWNLOADING ENVIRONMENT
 echo:
+echo [%date%]-[%time%] -- Environment successfuly downloaded >> log.txt
 call .debug\#SETUP.bat
