@@ -7,7 +7,7 @@ Collection of batch files used to install SETS and its dependencies and keep the
 This loader will be available through download from https://stobuilds.com together with a pre-downloaded image folder.
 
 - Make sure to unpack the supplied folder and move it to where you want SETS to be installed.
-- Install python 3 ... (TODO)
+- Install python 3, this can be either done through the Mircrosoft store or by downloading the python installer from www.python.org/downloads/windows/. Make sure to install python to PATH.
 - Run #DOWNLOAD_ENVIRONMENT.bat to download and install the app.
 - Run RUN.bat to start the app
 
