@@ -10,6 +10,6 @@ for /f %%a in ('type "%files%"') do (
 	bitsadmin.exe /transfer "Downloading..." !url! !targetpath!
 )
 cls
-echo [%date%]-[%time] -- App files successfully downloaded >> "%CD%\..debug\log.txt
-echo [%date%]-[%time] -- App files successfully downloaded
+echo [%date%]-[%time%] -- App files successfully downloaded >> "%CD%\..debug\log.txt
+echo [%date%]-[%time%] -- App files successfully downloaded
 pause
