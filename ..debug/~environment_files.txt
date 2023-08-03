@@ -1,5 +1,6 @@
 main.py
 requirements.txt
+README.md
 local\Appicon.icns
 local\arrow-down.png
 local\arrow-up.png
