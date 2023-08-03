@@ -5,12 +5,12 @@ GitHub Repository: https://github.com/STOCD/SETS_LOADER
 # === THIS ONLY WORKS FOR WINDOWS COMPUTERS ===
 
 ## HOW TO USE
-This loader is available through download from https://stobuilds.com/SETS/downloads.html including a pre-downloaded image folder.
+This loader is available through download from https://stobuilds.com/SETS/downloads.html. For starting quickly it is strongly advised on also downloading the images archive as well.
 
-- Make sure to unpack the supplied folder and move it to where you want SETS to be installed.
+- Make sure to unpack the supplied folder and move it to where you want SETS to be installed. Be aware that the app might not work in the downloads foldre or a subfolder of it.
 - Install python 3, this can be either done through the Mircrosoft store or by downloading the python installer from www.python.org/downloads/windows/. Make sure to install python to PATH.
 - Run #DOWNLOAD_ENVIRONMENT.bat to download and install the app.
-- Unpack the images folder, then create a new folder called `.config` and put the images folder inside it.
+- Unpack the images folder and move it into the `.config` folder.
 - Run RUN.bat to start the app
 
 - Every time you want to get a new version of the app, run #DOWNLOAD_APP.bat.
