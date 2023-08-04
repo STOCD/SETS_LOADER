@@ -18,8 +18,8 @@ bitsadmin.exe /transfer "Download#UNINSTALL-REQUIREMENTS" https://raw.githubuser
 bitsadmin.exe /transfer "Download#DOWNLOAD_APP_FILES" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/%%23DOWNLOAD_APP_FILES.bat "%CD%\#DOWNLOAD_APP_FILES.bat"
 bitsadmin.exe /transfer "DownloadReadme" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/README.md "%CD%\README.txt"
 bitsadmin.exe /transfer "Download.debug" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/.debug "%CD%\..debug\.debug"
-if exist %CD%\.config\images\ (
-	move /y %CD%\.config\images\ %CD%
+if exist "%CD%\.config\images\" (
+	move /y "%CD%\.config\images" "%CD%"
 )
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
@@ -37,9 +37,9 @@ for /f %%a in ('type "%dirs%"') do (
 	set currentfolder="%CD%\%%a"
 	md !currentfolder!
 )
-if exist %CD%\images\ (
-	if exist %CD%\.config\ (
-		move /y %CD%\images\ %CD%\.config\
+if exist "%CD%\images\" (
+	if exist "%CD%\.config\" (
+		move /y "%CD%\images" "%CD%\.config"
 	)
 )
 set prefix=https://raw.githubusercontent.com/STOCD/SETS/main/
