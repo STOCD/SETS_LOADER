@@ -4,10 +4,10 @@ pushd "%~dp0"
 cd ..
 set files=%CD%\..debug\~environment_files.txt
 set dirs=%CD%\..debug\~folders.txt
-set filesurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~environment_files.txt
-set dirsurl=https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~folders.txt
-bitsadmin.exe /transfer "DownloadFolderList" %dirsurl% "%dirs%"
-bitsadmin.exe /transfer "DownloadFilesList" %filesurl% "%files%"
+set saves=%CD%\..debug\~instance_stores.txt
+bitsadmin.exe /transfer "DownloadFolderList" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~folders.txt "%dirs%"
+bitsadmin.exe /transfer "DownloadFilesList" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~environment_files.txt "%files%"
+bitsadmin.exe /transfer "DownloadStoresList" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~instance_stores.txt "%saves%"
 bitsadmin.exe /transfer "DownloadAppFilesList" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/~app_files.txt "%CD%\..debug\~app_files.txt"
 bitsadmin.exe /transfer "DownloadRUN" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/RUN.bat "%CD%\RUN.bat"
 bitsadmin.exe /transfer "Download#SETUP" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/%%23SETUP.bat "%CD%\..debug\#SETUP.bat"
@@ -18,8 +18,11 @@ bitsadmin.exe /transfer "Download#UNINSTALL-REQUIREMENTS" https://raw.githubuser
 bitsadmin.exe /transfer "Download#DOWNLOAD_APP_FILES" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/%%23DOWNLOAD_APP_FILES.bat "%CD%\#DOWNLOAD_APP_FILES.bat"
 bitsadmin.exe /transfer "DownloadReadme" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/README.md "%CD%\README.txt"
 bitsadmin.exe /transfer "Download.debug" https://raw.githubusercontent.com/STOCD/SETS_LOADER/main/..debug/.debug "%CD%\..debug\.debug"
-if exist "%CD%\.config\images\" (
-	move /y "%CD%\.config\images" "%CD%"
+for /f %%a in ('type "%saves%"') do (
+	set currentsave="%CD%\%%a."
+	if exist !currentsave! (
+		move !currentsave! "%CD%."
+	)
 )
 for /f %%a in ('type "%files%"') do (
 	set current="%CD%\%%a"
@@ -37,17 +40,19 @@ for /f %%a in ('type "%dirs%"') do (
 	set currentfolder="%CD%\%%a"
 	md !currentfolder!
 )
-if exist "%CD%\images\" (
-	if exist "%CD%\.config\" (
-		move /y "%CD%\images" "%CD%\.config"
-	)
-)
 set prefix=https://raw.githubusercontent.com/STOCD/SETS/main/
 for /f %%a in ('type "%files%"') do (
 	set targetpath="%CD%\%%a"
 	set url=%%a
 	set url=%prefix%!url:\=/!
 	bitsadmin.exe /transfer "Downloading..." !url! !targetpath!
+)
+for /f %%a in ('type "%saves%"') do (
+	for %%b in ("%%a.") do (
+		set temp="%CD%\%%~nxb"
+	)
+	set target="%%~dpa."
+	move !temp! !target!
 )
 cls
 echo SUCCESS DOWNLOADING ENVIRONMENT
